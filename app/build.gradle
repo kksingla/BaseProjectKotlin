@@ -1,0 +1,96 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    flavorDimensions "default"
+
+    dataBinding.enabled = true
+
+    signingConfigs {
+        Prod {
+            keyAlias 'kksingla'
+            keyPassword 'kksingla'
+            storeFile file('KeyStore/demo.jks')
+            storePassword 'kksingla'
+        }
+    }
+    defaultConfig {
+        applicationId "com.appringer.ksdemo"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 3
+        versionName getDate()
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.Prod
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.Prod
+        }
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def date = new Date()
+                def formattedDate = date.format('yyyyMMdd_HHmmss')
+                output.outputFileName = "KKDemo-v" + formattedDate + ".apk"
+            }
+        }
+    }
+    productFlavors {
+        dev {
+            resValue "string", "app_name", "KK Demo dev"
+            }
+        prod {
+            resValue "string", "app_name", "KK Demo"
+            }
+    }
+
+}
+
+static def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd')
+    return formattedDate
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //Places API
+    implementation "com.google.android.gms:play-services-places:16.0.0"
+    //Image Lib
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    //GSON
+    implementation 'com.google.code.gson:gson:2.8.5'
+    //VM
+    implementation "android.arch.lifecycle:viewmodel:1.1.1"
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-core:17.2.3'
+    implementation "com.google.firebase:firebase-auth:19.3.0"
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    //Firebase DL
+    implementation 'com.google.firebase:firebase-invites:17.0.0'
+    //RTD
+    implementation "com.google.firebase:firebase-database:19.2.1"
+    //Notification
+    implementation 'com.google.firebase:firebase-messaging:20.1.3'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //Crash Report
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+}

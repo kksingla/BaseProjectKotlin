@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="default_notification_channel_id">Default</string>
+
+    <string name="hint_dob">Date of Birth</string>
+    <string name="hint_confirm_your_password">Confirm Password</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_enter_your_old_password">Old Password</string>
+    <string name="hint_enter_your_password">New Password</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_mno">Mobile Number</string>
+    <string name="hint_otp">Enter OTP</string>
+    <string name="hint_pass">Password</string>
+    <string name="hint_username">Username</string>
+
+    <string name="change_password">Change Password</string>
+    <string name="confirm_pass_new_pass_not_same">Re-enter Password must same as New Password</string>
+
+    <string name="search">Search</string>
+    <string name="no_storage_permission">No Storage Permission</string>
+    <string name="dismiss">Dismiss</string>
+
+    <string name="enter_old_pass">Please enter old Password</string>
+    <string name="enter_re_new_pass">Please re-enter new Password</string>
+    <string name="new_not_same_old_pass">New Password cannot same as Old Password</string>
+
+    <string name="error_email">Please enter your Email Id</string>
+    <string name="error_first_name">Please enter your First Name</string>
+    <string name="error_invalid_email">Please enter a valid Email Id</string>
+    <string name="error_invalid_mno">Please enter a valid Mobile Number</string>
+    <string name="error_last_name">Please enter your Last Name</string>
+    <string name="error_mno">Please enter Mobile Number</string>
+    <string name="error_password">Please enter your Password</string>
+    <string name="error_username">Please enter at-least 5 character for Username</string>
+    <string name="forgot_pass">Forgot Password?</string>
+
+    <string name="no_internet">No Internet Connection</string>
+    <string name="pass_change_success">Password Changed Successfully !!</string>
+    <string name="please_wait">Hold on</string>
+    <string name="save">Save</string>
+    <string name="server_error">Unable to communicate to the server, please try again later</string>
+    <string name="timeout_error">Server Time out, please try again</string>
+    <string name="unknown_error">Unknown error, please try again later</string>
+
+    <string name="permission_location_rationale">%s need Location Permission</string>
+    <string name="permission_location_denied">Location Permission Denied</string>
+    <string name="text_login">I have an Account Sign in</string>
+    <string name="login">Sign in</string>
+    <string name="text_register">Don\'t Have An Account Yet? Sign Up</string>
+    <string name="register">Sign Up</string>
+</resources>
